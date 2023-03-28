@@ -2,9 +2,9 @@ class UserRepositoryInMemory {
   users = []
 
   async findByEmail(email) {
-    const checkUserExists = this.users.find((user) => user.email === email)
+    const user = this.users.find((user) => user.email === email)
 
-    return checkUserExists
+    return user
   }
 
   async createUser({ name, email, password }) {
@@ -18,6 +18,24 @@ class UserRepositoryInMemory {
     this.users.push(user)
 
     return user
+  }
+
+  async findById(id) {
+    const user = this.users.find((user) => user.id === id)
+
+    return user
+  }
+
+  async updateUser(userUpdated) {
+    this.users = this.users.map((user) => {
+      if (userUpdated.id === user.id) {
+        user = userUpdated
+      }
+
+      return user
+    })
+
+    return userUpdated
   }
 }
 
