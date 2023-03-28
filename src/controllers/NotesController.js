@@ -1,38 +1,21 @@
 const knex = require("../database/knex")
-
+const NotesRepository = require("../repositories/NotesRepository")
+const NotesCreateService = require("../services/NotesCreateService")
 class NotesController {
   async create(request, response) {
     const { title, description, tags, links } = request.body
     const user_id = request.user.id
 
-    const note_id = await knex("notes").insert({
+    const notesRepository = new NotesRepository()
+    const notesCreateService = new NotesCreateService(notesRepository)
+
+    await notesCreateService.execute({
       title,
       description,
+      tags,
+      links,
       user_id,
     })
-
-    const tagsInsert = tags.map((name) => {
-      return {
-        note_id: Number(note_id),
-        name,
-        user_id,
-      }
-    })
-
-    if (tagsInsert.length !== 0) {
-      await knex("tags").insert(tagsInsert)
-    }
-
-    const linksInsert = links.map((url) => {
-      return {
-        note_id: Number(note_id),
-        url,
-      }
-    })
-
-    if (linksInsert.length !== 0) {
-      await knex("links").insert(linksInsert)
-    }
 
     return response.status(201).json()
   }
