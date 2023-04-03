@@ -35,6 +35,12 @@ Além disso, a aplicação está conectada com um banco de dados, deixando as co
 - Nullish operator;
 - Query Builder: knex.js;
 - Consultas simples e Complexas no DB.
+- Fluxo de autenticação;
+- Trabalhar com Json Web Token (JWT);
+- Trabalhar com Middleware;
+- Como fazer Upload de Imagens na aplicação;
+- Trabalhar com API Restful;
+- Trabalhar com Cross-Origin Resource Sharing (CORS).
 
 ## 🛠 Tecnologias usadas
 
