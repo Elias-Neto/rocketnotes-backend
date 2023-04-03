@@ -34,19 +34,26 @@ Além disso, a aplicação está conectada com um banco de dados, deixando as co
 - Criptografia de senha;
 - Nullish operator;
 - Query Builder: knex.js;
-- Consultas simples e Complexas no DB.
+- Consultas simples e Complexas no DB;
 - Fluxo de autenticação;
 - Trabalhar com Json Web Token (JWT);
 - Trabalhar com Middleware;
 - Como fazer Upload de Imagens na aplicação;
 - Trabalhar com API Restful;
-- Trabalhar com Cross-Origin Resource Sharing (CORS).
+- Trabalhar com Cross-Origin Resource Sharing (CORS);
+- O que é Deploy;
+- Ambientes de execução;
+- Boa práticas de Deploy: Dados sensíveis e Variáveis Ambientes;
+- Gerenciador de processos PM2;
+- Desenvolver Testes com Jest.js;
+- O que é e como aplicar o princípio da Inversão de Dependência.
 
 ## 🛠 Tecnologias usadas
 
 - [NodeJS](https://nodejs.org/en/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
 - [Express](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
+- [Jest.js](https://jestjs.io/)
 - [Knex.js](https://knexjs.org/)
 - [SQL](https://www.sqltutorial.org/)
 - [Beekeeper Studio](https://www.beekeeperstudio.io/)
@@ -75,6 +82,9 @@ $ npm install
 
 # Execute as migrations
 $ npm run migrate
+
+# Caso queira rodar os testes
+$ npm run test
 
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
